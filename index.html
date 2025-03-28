@@ -3,36 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой YouTube</title>
+    <title>РњРѕР№ YouTube</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Добро пожаловать на Мой YouTube</h1>
+    <h1>Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РЅР° РњРѕР№ YouTube</h1>
 
-    <!-- Видеоплеер -->
+    <!-- РљРЅРѕРїРєРё РґР»СЏ СЂРµРіРёСЃС‚СЂР°С†РёРё Рё СЃРѕР·РґР°РЅРёСЏ РєР°РЅР°Р»Р° -->
+    <div id="actions">
+        <button id="registerBtn">Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ</button>
+        <button id="createChannelBtn">РЎРѕР·РґР°С‚СЊ РєР°РЅР°Р»</button>
+    </div>
+
+    <!-- Р’РёРґРµРѕРїР»РµРµСЂ -->
     <div id="videoPlayer">
-        <h2>Смотрите видео</h2>
+        <h2>РЎРјРѕС‚СЂРёС‚Рµ РІРёРґРµРѕ</h2>
         <video id="mainVideo" controls width="600">
             <source src="" type="video/mp4">
-            Ваш браузер не поддерживает видео.
+            Р’Р°С€ Р±СЂР°СѓР·РµСЂ РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚ РІРёРґРµРѕ.
         </video>
     </div>
 
-    <!-- Список видео -->
+    <!-- РЎРїРёСЃРѕРє РІРёРґРµРѕ -->
     <div id="videoList">
-        <h2>Другие видео</h2>
+        <h2>Р”СЂСѓРіРёРµ РІРёРґРµРѕ</h2>
         <ul id="videoListItems">
-            <!-- Видео будут добавляться здесь -->
+            <!-- Р’РёРґРµРѕ Р±СѓРґСѓС‚ РґРѕР±Р°РІР»СЏС‚СЊСЃСЏ Р·РґРµСЃСЊ -->
         </ul>
     </div>
 
-    <!-- Форма для загрузки видео -->
+    <!-- Р¤РѕСЂРјР° РґР»СЏ Р·Р°РіСЂСѓР·РєРё РІРёРґРµРѕ -->
     <div id="uploadSection">
-        <h2>Загрузить видео</h2>
+        <h2>Р—Р°РіСЂСѓР·РёС‚СЊ РІРёРґРµРѕ</h2>
         <form id="uploadForm" enctype="multipart/form-data">
-            <label for="videoFile">Выберите видео:</label>
+            <label for="videoFile">Р’С‹Р±РµСЂРёС‚Рµ РІРёРґРµРѕ:</label>
             <input type="file" id="videoFile" name="video" required><br><br>
-            <button type="submit">Загрузить</button>
+            <button type="submit">Р—Р°РіСЂСѓР·РёС‚СЊ</button>
         </form>
     </div>
 

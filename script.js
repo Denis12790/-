@@ -1,11 +1,10 @@
+// Скрыть/показать формы при нажатии на кнопки
 document.getElementById('registerBtn').addEventListener('click', function() {
-    alert("Вы перешли на страницу регистрации.");
-    // Здесь можно добавить логику для перехода на страницу регистрации
-    // window.location.href = '/register';  // Пример перехода на страницу регистрации
+    document.getElementById('registrationForm').style.display = 'block';
+    document.getElementById('createChannelForm').style.display = 'none';
 });
 
 document.getElementById('createChannelBtn').addEventListener('click', function() {
-    alert("Вы перешли на страницу создания канала.");
-    // Здесь можно добавить логику для перехода на страницу создания канала
-    // window.location.href = '/create-channel';  // Пример перехода на страницу создания канала
+    document.getElementById('createChannelForm').style.display = 'block';
+    document.getElementById('registrationForm').style.display = 'none';
 });

@@ -41,7 +41,7 @@ input {
     border-radius: 5px;
 }
 
-#registrationForm, #createChannelForm {
+#registrationForm, #createChannelForm, #successMessage {
     margin-top: 30px;
     background-color: #f4f4f4;
     padding: 20px;

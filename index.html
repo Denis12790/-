@@ -9,9 +9,9 @@
 <body>
     <h1>Добро пожаловать на Мой YouTube</h1>
 
-    <!-- Кнопки для регистрации и создания канала -->
+    <!-- Кнопки для регистрации и аккаунта -->
     <div id="actions">
-        <button id="registerBtn">Зарегистрироваться</button>
+        <button id="registerBtn">Зарегистрироваться</button> <!-- Кнопка регистрации -->
         <button id="accountBtn" style="display: none;">Мой аккаунт</button> <!-- Кнопка для аккаунта (по умолчанию скрыта) -->
     </div>
 
@@ -35,20 +35,10 @@
         </form>
     </div>
 
-    <!-- Сообщение об успешной регистрации и кнопка для выхода -->
+    <!-- Сообщение об успешной регистрации -->
     <div id="successMessage" style="display: none;">
-        <p>Вы успешно зарегистрированы!</p>
-        <button id="logoutBtn">Выйти из аккаунта</button>
-    </div>
-
-    <!-- Форма создания канала (по умолчанию скрыта) -->
-    <div id="createChannelForm" style="display: none;">
-        <h2>Создание канала</h2>
-        <form>
-            <label for="channelName">Название канала:</label>
-            <input type="text" id="channelName" required><br><br>
-            <button type="submit">Создать канал</button>
-        </form>
+        <p>Вы зарегистрированы!</p>
+        <button id="logoutBtn">Выйти из аккаунта</button> <!-- Кнопка выхода -->
     </div>
 
     <script src="script.js"></script>

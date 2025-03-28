@@ -2,6 +2,8 @@
 const registerBtn = document.getElementById('registerBtn');
 const registrationForm = document.getElementById('registrationForm');
 const successMessage = document.getElementById('successMessage');
+const userDetails = document.getElementById('userDetails');
+const logoutBtn = document.getElementById('logoutBtn');
 
 // Обработчик нажатия на кнопку "Зарегистрироваться"
 registerBtn.addEventListener('click', function() {
@@ -28,15 +30,20 @@ registerForm.addEventListener('submit', function(event) {
         return;
     }
 
-    // Показываем сообщение об успешной регистрации
+    // Показываем сообщение об успешной регистрации и данные пользователя
     registrationForm.style.display = 'none';
     successMessage.style.display = 'block';
+    userDetails.textContent = `Имя пользователя: ${username} | Email: ${email}`;
 
-    // Меняем текст на кнопке на "Мой аккаунт"
-    registerBtn.innerText = 'Мой аккаунт';
-
-    // Добавляем обработчик для кнопки "Мой аккаунт"
-    registerBtn.addEventListener('click', function() {
-        alert("Вы зарегистрированы!");
+    // Добавляем обработчик для кнопки "Выйти из аккаунта"
+    logoutBtn.addEventListener('click', function() {
+        // Очищаем данные пользователя
+        successMessage.style.display = 'none';
+        registerBtn.style.display = 'block'; // Показываем кнопку "Зарегистрироваться"
+        registrationForm.style.display = 'none'; // Скрываем форму регистрации
+        document.getElementById('username').value = ''; // Очищаем поля ввода
+        document.getElementById('email').value = '';
+        document.getElementById('password').value = '';
+        document.getElementById('confirmPassword').value = '';
     });
 });

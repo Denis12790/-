@@ -10,8 +10,8 @@ h1 {
     margin-bottom: 20px;
 }
 
-#actions {
-    margin-bottom: 30px;
+#registrationSection {
+    margin-top: 30px;
 }
 
 button {
@@ -41,7 +41,7 @@ input {
     border-radius: 5px;
 }
 
-#registrationForm, #createChannelForm, #successMessage {
+#successMessage {
     margin-top: 30px;
     background-color: #f4f4f4;
     padding: 20px;

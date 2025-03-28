@@ -38,7 +38,16 @@
     <div id="successMessage" style="display: none;">
         <h2>Вы успешно зарегистрированы!</h2>
         <p id="userDetails"></p> <!-- Отображение имени пользователя и email -->
+        <button id="createChannelBtn">Создать канал</button> <!-- Кнопка для создания канала -->
         <button id="logoutBtn">Выйти из аккаунта</button> <!-- Кнопка выхода -->
+    </div>
+
+    <!-- Форма создания канала -->
+    <div id="channelForm" style="display: none;">
+        <h2>Создать канал</h2>
+        <label for="channelName">Название канала:</label>
+        <input type="text" id="channelName" placeholder="Введите название канала" required><br><br>
+        <button id="submitChannelBtn">Создать канал</button>
     </div>
 
     <script src="script.js"></script>

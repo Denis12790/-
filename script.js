@@ -74,3 +74,33 @@ submitChannelBtn.addEventListener('click', function() {
     // Скрываем форму для создания канала
     channelForm.style.display = 'none';
 });
+document.getElementById("createChannelBtn").addEventListener("click", function() {
+    document.getElementById("createChannelForm").style.display = "block";
+    document.getElementById("createChannelBtn").style.display = "none";
+});
+
+document.getElementById("submitChannel").addEventListener("click", function() {
+    const channelName = document.getElementById("channelName").value;
+    if (channelName) {
+        document.getElementById("channelNameDisplay").innerText = channelName;
+        document.getElementById("channelNameDisplayHere").innerText = channelName;
+        
+        // Показываем сообщение о создании канала
+        document.getElementById("channelCreated").style.display = "block";
+        document.getElementById("createChannelForm").style.display = "none";
+    } else {
+        alert("Пожалуйста, введите название канала!");
+    }
+});
+
+document.getElementById("uploadVideoBtn").addEventListener("click", function() {
+    const videoFile = document.getElementById("videoFile").files[0];
+    if (videoFile) {
+        const videoUrl = URL.createObjectURL(videoFile);
+        document.getElementById("videoSource").src = videoUrl;
+        document.getElementById("videoPlayer").load();
+        document.getElementById("channelDisplay").style.display = "block";
+    } else {
+        alert("Пожалуйста, выберите файл видео для загрузки!");
+    }
+});

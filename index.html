@@ -3,51 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой YouTube</title>
+    <title>Создать канал</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Добро пожаловать на Мой YouTube</h1>
+    <h1>Добро пожаловать на мой сайт</h1>
 
-    <!-- Кнопки для регистрации и аккаунта -->
-    <div id="actions">
-        <button id="registerBtn">Зарегистрироваться</button> <!-- Кнопка регистрации -->
+    <!-- Кнопка для создания канала -->
+    <button id="createChannelBtn">Создать канал</button>
+
+    <!-- Форма для ввода названия канала -->
+    <div id="createChannelForm" style="display: none;">
+        <h2>Введите название канала</h2>
+        <input type="text" id="channelName" placeholder="Название канала" required>
+        <button id="submitChannel">Создать канал</button>
     </div>
 
-    <!-- Форма регистрации -->
-    <div id="registrationForm" style="display: none;">
-        <h2>Регистрация</h2>
-        <form id="registerForm">
-            <label for="username">Имя пользователя:</label>
-            <input type="text" id="username" required><br><br>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" required><br><br>
+    <!-- Сообщение о создании канала и форма для загрузки видео -->
+    <div id="channelCreated" style="display: none;">
+        <h2>Твой канал создан!</h2>
+        <p>Название канала: <span id="channelNameDisplay"></span></p>
 
-            <label for="password">Пароль:</label>
-            <input type="password" id="password" required><br><br>
+        <!-- Форма для загрузки видео -->
+        <input type="file" id="videoFile" accept="video/*" />
+        <button id="uploadVideoBtn">Загрузить видео</button>
 
-            <label for="confirmPassword">Подтвердите пароль:</label>
-            <input type="password" id="confirmPassword" required><br><br>
-
-            <button type="submit">Зарегистрироваться</button>
-        </form>
-    </div>
-
-    <!-- Сообщение об успешной регистрации и отображение данных пользователя -->
-    <div id="successMessage" style="display: none;">
-        <h2>Вы успешно зарегистрированы!</h2>
-        <p id="userDetails"></p> <!-- Отображение имени пользователя и email -->
-        <button id="createChannelBtn">Создать канал</button> <!-- Кнопка для создания канала -->
-        <button id="logoutBtn">Выйти из аккаунта</button> <!-- Кнопка выхода -->
-    </div>
-
-    <!-- Форма создания канала -->
-    <div id="channelForm" style="display: none;">
-        <h2>Создать канал</h2>
-        <label for="channelName">Название канала:</label>
-        <input type="text" id="channelName" placeholder="Введите название канала" required><br><br>
-        <button id="submitChannelBtn">Создать канал</button>
+        <!-- Место для отображения канала и видео -->
+        <div id="channelDisplay" style="display: none;">
+            <h3>Канал: <span id="channelNameDisplayHere"></span></h3>
+            <video id="videoPlayer" width="640" controls>
+                <source id="videoSource" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </div>
     </div>
 
     <script src="script.js"></script>

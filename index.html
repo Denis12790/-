@@ -44,3 +44,71 @@
     <script src="script.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузка видео</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        #videoContainer {
+            margin-top: 20px;
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+        #uploadButton {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #uploadButton:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Загрузить видео на сайт</h1>
+    
+    <!-- Поле для выбора файла видео -->
+    <input type="file" id="videoInput" accept="video/*">
+    
+    <!-- Кнопка для загрузки видео -->
+    <button id="uploadButton">Загрузить видео</button>
+    
+    <!-- Место для отображения видео -->
+    <div id="videoContainer"></div>
+
+    <script>
+        // Получаем элементы
+        const videoInput = document.getElementById('videoInput');
+        const uploadButton = document.getElementById('uploadButton');
+        const videoContainer = document.getElementById('videoContainer');
+
+        // Добавляем обработчик для кнопки загрузки
+        uploadButton.addEventListener('click', () => {
+            const file = videoInput.files[0];  // Получаем файл
+            if (file) {
+                const videoURL = URL.createObjectURL(file);  // Создаем URL для видео
+                const videoElement = document.createElement('video');
+                videoElement.src = videoURL;
+                videoElement.controls = true;  // Добавляем элементы управления видео
+                videoContainer.innerHTML = '';  // Очищаем контейнер перед добавлением нового видео
+                videoContainer.appendChild(videoElement);  // Вставляем видео
+            } else {
+                alert('Пожалуйста, выберите видео файл для загрузки.');
+            }
+        });
+    </script>
+</body>
+</html>

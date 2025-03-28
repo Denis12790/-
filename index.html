@@ -18,7 +18,7 @@
     <!-- Форма регистрации (по умолчанию скрыта) -->
     <div id="registrationForm" style="display: none;">
         <h2>Регистрация</h2>
-        <form>
+        <form id="registerForm">
             <label for="username">Имя пользователя:</label>
             <input type="text" id="username" required><br><br>
             
@@ -33,6 +33,12 @@
 
             <button type="submit">Зарегистрироваться</button>
         </form>
+    </div>
+
+    <!-- Сообщение об успешной регистрации и кнопка для выхода (по умолчанию скрыто) -->
+    <div id="successMessage" style="display: none;">
+        <p>Вы успешно зарегистрированы!</p>
+        <button id="logoutBtn">Выйти из аккаунта</button>
     </div>
 
     <!-- Форма создания канала (по умолчанию скрыта) -->

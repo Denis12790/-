@@ -1,6 +1,6 @@
 // Получаем элементы
 const registerBtn = document.getElementById('registerBtn');
-const createChannelBtn = document.getElementById('createChannelBtn');
+const accountBtn = document.getElementById('accountBtn');
 const registrationForm = document.getElementById('registrationForm');
 const successMessage = document.getElementById('successMessage');
 const logoutBtn = document.getElementById('logoutBtn');
@@ -9,18 +9,9 @@ const logoutBtn = document.getElementById('logoutBtn');
 registerBtn.addEventListener('click', function() {
     // Показываем форму регистрации
     registrationForm.style.display = 'block';
-    // Скрываем сообщение об успехе и форму создания канала, если они открыты
+    // Скрываем сообщение об успехе и кнопку "Мой аккаунт", если они открыты
     successMessage.style.display = 'none';
-    createChannelForm.style.display = 'none';
-});
-
-// Обработчик нажатия на кнопку "Создать канал"
-createChannelBtn.addEventListener('click', function() {
-    // Показываем форму создания канала
-    createChannelForm.style.display = 'block';
-    // Скрываем форму регистрации и сообщение об успехе, если они открыты
-    registrationForm.style.display = 'none';
-    successMessage.style.display = 'none';
+    accountBtn.style.display = 'none';
 });
 
 // Обработчик отправки формы регистрации
@@ -43,12 +34,24 @@ registerForm.addEventListener('submit', function(event) {
     // Показываем сообщение об успешной регистрации
     registrationForm.style.display = 'none';
     successMessage.style.display = 'block';
+
+    // Скрываем кнопку "Зарегистрироваться" и показываем кнопку "Мой аккаунт"
+    registerBtn.style.display = 'none';
+    accountBtn.style.display = 'inline-block';
+});
+
+// Обработчик нажатия на кнопку "Мой аккаунт"
+accountBtn.addEventListener('click', function() {
+    // Показываем сообщение о том, что пользователь авторизован
+    alert("Вы в вашем аккаунте!");
+    // Показываем кнопку "Выйти из аккаунта"
+    logoutBtn.style.display = 'inline-block';
 });
 
 // Обработчик нажатия на кнопку "Выйти из аккаунта"
 logoutBtn.addEventListener('click', function() {
-    // Скрываем сообщение об успехе и кнопку выхода
-    successMessage.style.display = 'none';
-    // Показываем форму регистрации
-    registrationForm.style.display = 'block';
-});
+    // Скрываем кнопку выхода
+    logoutBtn.style.display = 'none';
+    // Показываем кнопку "Зарегистрироваться" и скрываем "Мой аккаунт"
+    registerBtn.style.display = 'inline-block';
+    accountBtn.style.display =

@@ -59,3 +59,4 @@ localStorage.removeItem("username");
 
 // Очистка всего хранилища
 localStorage.clear();
+localStorage.removeItem("аааа");

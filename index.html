@@ -44,3 +44,100 @@
     <script src="script.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход на сайт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #loginForm {
+            display: none; /* Форма скрыта по умолчанию */
+            margin-top: 20px;
+        }
+        #loginMessage {
+            display: none;
+            margin-top: 20px;
+            color: green;
+        }
+        #logoutButton {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Добро пожаловать на наш сайт!</h1>
+
+    <!-- Кнопка для входа -->
+    <button id="loginButton">Вход</button>
+
+    <!-- Форма входа -->
+    <div id="loginForm">
+        <h2>Форма входа</h2>
+        <form id="loginFormElement">
+            <label for="email">Имейл:</label>
+            <input type="email" id="email" required><br><br>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" required><br><br>
+            <button type="submit">Войти</button>
+        </form>
+    </div>
+
+    <!-- Сообщение после успешного входа -->
+    <p id="loginMessage"></p>
+
+    <!-- Кнопка для выхода -->
+    <button id="logoutButton">Выйти</button>
+
+    <script>
+        // Получаем элементы
+        const loginButton = document.getElementById("loginButton");
+        const loginForm = document.getElementById("loginForm");
+        const loginFormElement = document.getElementById("loginFormElement");
+        const loginMessage = document.getElementById("loginMessage");
+        const logoutButton = document.getElementById("logoutButton");
+
+        // Показываем форму входа при нажатии на кнопку "Вход"
+        loginButton.onclick = function() {
+            loginForm.style.display = "block"; // Показываем форму
+            loginButton.style.display = "none"; // Прячем кнопку "Вход"
+        };
+
+        // Обработка формы входа
+        loginFormElement.onsubmit = function(event) {
+            event.preventDefault(); // Останавливаем перезагрузку страницы
+
+            // Получаем значения из полей
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // После успешного входа показываем сообщение
+            loginMessage.style.display = "block";
+            loginMessage.innerHTML = `Вы успешно вошли!<br>Имя пользователя: ${email}<br>e-mail: ${email}`;
+
+            // Показываем кнопку выхода
+            logoutButton.style.display = "inline-block";
+
+            // Прячем форму и кнопку "Вход"
+            loginForm.style.display = "none";
+        };
+
+        // Выход из аккаунта
+        logoutButton.onclick = function() {
+            // Прячем сообщение о входе и кнопку выхода
+            loginMessage.style.display = "none";
+            logoutButton.style.display = "none";
+
+            // Показываем кнопку "Вход"
+            loginButton.style.display = "inline-block";
+        };
+    </script>
+
+</body>
+</html>

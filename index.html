@@ -145,6 +145,25 @@
 
 </body>
 </html>
+<input type="text" id="nameInput" placeholder="Введите имя">
+<button onclick="saveName()">Сохранить</button>
+<p id="welcomeMessage"></p>
+
+<script>
+    function saveName() {
+        let name = document.getElementById("nameInput").value;
+        localStorage.setItem("username", name); // Сохраняем имя
+        document.getElementById("welcomeMessage").textContent = "Привет, " + name + "!";
+    }
+
+    // Проверяем, есть ли имя в localStorage при загрузке страницы
+    window.onload = function() {
+        let savedName = localStorage.getItem("username");
+        if (savedName) {
+            document.getElementById("welcomeMessage").textContent = "Привет, " + savedName + "!";
+        }
+    };
+</script>
 
    
    

@@ -47,3 +47,15 @@ registerForm.addEventListener('submit', function(event) {
         document.getElementById('confirmPassword').value = '';
     });
 });
+// Сохранение имени пользователя
+localStorage.setItem("username", "Иван");
+
+// Получение имени пользователя
+let user = localStorage.getItem("username");
+console.log(user); // Выведет: Иван
+
+// Удаление имени
+localStorage.removeItem("username");
+
+// Очистка всего хранилища
+localStorage.clear();

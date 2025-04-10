@@ -49,6 +49,26 @@
         </form>
     </div>
 
+    <div id="schedule">
+        <h3>Расписание</h3>
+        <form id="schedule-form">
+            <label for="day">День недели:</label>
+            <input type="text" id="day" required>
+            <br>
+            <label for="start-time">Время начала:</label>
+            <input type="time" id="start-time" required>
+            <br>
+            <label for="end-time">Время окончания:</label>
+            <input type="time" id="end-time" required>
+            <br>
+            <label for="subject">Предмет:</label>
+            <input type="text" id="subject" required>
+            <br>
+            <button type="submit">Добавить</button>
+        </form>
+        <ul id="schedule-list"></ul>
+    </div>
+
     <script src="functions.js"></script>
 </body>
 </html>

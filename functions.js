@@ -1,6 +1,6 @@
 // Логика входа
 document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Останавливаем стандартное поведение формы
+    event.preventDefault();
 
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
@@ -89,7 +89,4 @@ document.getElementById('grade-form').addEventListener('submit', function(event)
 
     localStorage.setItem('grades', JSON.stringify(grades));
 
-    alert('Оценка выставлена!');
-    document.getElementById('student-name').value = '';
-    document.getElementById('grade').value = '';
-});
+    alert

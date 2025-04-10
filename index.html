@@ -1,41 +1,23 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой YouTube</title>
+    <title>Electronic Journal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Добро пожаловать на Мой YouTube</h1>
-
-    <!-- Видеоплеер -->
-    <div id="videoPlayer">
-        <h2>Смотрите видео</h2>
-        <video id="mainVideo" controls width="600">
-            <source src="" type="video/mp4">
-            Ваш браузер не поддерживает видео.
-        </video>
-    </div>
-
-    <!-- Список видео -->
-    <div id="videoList">
-        <h2>Другие видео</h2>
-        <ul id="videoListItems">
-            <!-- Видео будут добавляться здесь -->
-        </ul>
-    </div>
-
-    <!-- Форма для загрузки видео -->
-    <div id="uploadSection">
-        <h2>Загрузить видео</h2>
-        <form id="uploadForm" enctype="multipart/form-data">
-            <label for="videoFile">Выберите видео:</label>
-            <input type="file" id="videoFile" name="video" required><br><br>
-            <button type="submit">Загрузить</button>
+    <div class="login-container">
+        <h2>Login to Electronic Journal</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
         </form>
+        <p id="error-message" style="color: red;"></p>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>

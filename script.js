@@ -1,35 +1,15 @@
-document.getElementById('uploadForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // РћС‚РјРµРЅСЏРµРј СЃС‚Р°РЅРґР°СЂС‚РЅСѓСЋ РѕС‚РїСЂР°РІРєСѓ С„РѕСЂРјС‹
 
-    const videoFile = document.getElementById('videoFile').files[0];
-    if (videoFile) {
-        const reader = new FileReader();
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    let errorMessage = document.getElementById("error-message");
 
-        // Когда файл загружен в память
-        reader.onload = function(e) {
-            const videoURL = e.target.result;  // URL для просмотра видео
-
-            // Отображаем видео на главной странице
-            const videoPlayer = document.getElementById('mainVideo');
-            videoPlayer.src = videoURL;
-
-            // Добавляем видео в список
-            const videoListItems = document.getElementById('videoListItems');
-            const listItem = document.createElement('li');
-            const videoLink = document.createElement('a');
-            videoLink.href = videoURL;
-            videoLink.textContent = "Смотреть новое видео";
-            videoLink.target = "_blank";  // Открывать видео в новой вкладке
-            listItem.appendChild(videoLink);
-            videoListItems.appendChild(listItem);
-
-            // Очистить форму после загрузки
-            document.getElementById('uploadForm').reset();
-        };
-
-        // Чтение файла как URL для видео
-        reader.readAsDataURL(videoFile);
+    // РџСЂРѕСЃС‚Р°СЏ РїСЂРѕРІРµСЂРєР° Р»РѕРіРёРЅР° Рё РїР°СЂРѕР»СЏ (Р·Р°РјРµРЅРёС‚Рµ РЅР° СЃРІРѕСЋ СЃРёСЃС‚РµРјСѓ Р°СѓС‚РµРЅС‚РёС„РёРєР°С†РёРё)
+    if (username === "admin" && password === "1234") {
+        localStorage.setItem("loggedInUser", username); // РЎРѕС…СЂР°РЅСЏРµРј РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РІ Р»РѕРєР°Р»СЊРЅРѕРј С…СЂР°РЅРёР»РёС‰Рµ
+        window.location.href = "dashboard.html"; // РџРµСЂРµРЅР°РїСЂР°РІР»СЏРµРј РЅР° РіР»Р°РІРЅСѓСЋ СЃС‚СЂР°РЅРёС†Сѓ Р¶СѓСЂРЅР°Р»Р°
     } else {
-        alert('Пожалуйста, выберите видео для загрузки.');
+        errorMessage.textContent = "РќРµРІРµСЂРЅС‹Р№ Р»РѕРіРёРЅ РёР»Рё РїР°СЂРѕР»СЊ!";
     }
 });

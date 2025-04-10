@@ -1,33 +1,33 @@
-// Логика входа
+// Р›РѕРіРёРєР° РІС…РѕРґР°
 document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Останавливаем стандартное поведение формы
+    event.preventDefault(); // РћСЃС‚Р°РЅР°РІР»РёРІР°РµРј СЃС‚Р°РЅРґР°СЂС‚РЅРѕРµ РїРѕРІРµРґРµРЅРёРµ С„РѕСЂРјС‹
 
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    // Стандартные учетные данные
+    // РЎС‚Р°РЅРґР°СЂС‚РЅС‹Рµ СѓС‡РµС‚РЅС‹Рµ РґР°РЅРЅС‹Рµ
     const validUser = { username: 'admin', password: 'admin', role: 'admin' };
 
     if (username === validUser.username && password === validUser.password) {
         localStorage.setItem('username', username);
         localStorage.setItem('role', validUser.role);
-        window.location.href = 'dashboard.html'; // Перенаправляем на главную страницу
+        window.location.href = 'dashboard.html'; // РџРµСЂРµРЅР°РїСЂР°РІР»СЏРµРј РЅР° РіР»Р°РІРЅСѓСЋ СЃС‚СЂР°РЅРёС†Сѓ
     } else {
-        alert('Неверный логин или пароль!');
+        alert('РќРµРІРµСЂРЅС‹Р№ Р»РѕРіРёРЅ РёР»Рё РїР°СЂРѕР»СЊ!');
     }
 });
 
-// Загружаем информацию о пользователе
+// Р—Р°РіСЂСѓР¶Р°РµРј РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РїРѕР»СЊР·РѕРІР°С‚РµР»Рµ
 window.onload = function() {
     const username = localStorage.getItem('username');
     const role = localStorage.getItem('role');
 
     if (!username) {
-        window.location.href = 'index.html'; // Перенаправляем на страницу входа, если нет пользователя
+        window.location.href = 'index.html'; // РџРµСЂРµРЅР°РїСЂР°РІР»СЏРµРј РЅР° СЃС‚СЂР°РЅРёС†Сѓ РІС…РѕРґР°, РµСЃР»Рё РЅРµС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
     } else {
-        document.getElementById('welcome-message').textContent = `Привет, ${username}. Ваша роль: ${role}`;
+        document.getElementById('welcome-message').textContent = `РџСЂРёРІРµС‚, ${username}. Р’Р°С€Р° СЂРѕР»СЊ: ${role}`;
 
-        // Показываем функции в зависимости от роли
+        // РџРѕРєР°Р·С‹РІР°РµРј С„СѓРЅРєС†РёРё РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ СЂРѕР»Рё
         if (role === 'admin') {
             document.getElementById('admin-functions').style.display = 'block';
         } else if (role === 'teacher') {
@@ -35,15 +35,15 @@ window.onload = function() {
         }
     }
 
-    // Выход из системы
+    // Р’С‹С…РѕРґ РёР· СЃРёСЃС‚РµРјС‹
     document.getElementById('logout').addEventListener('click', function() {
         localStorage.removeItem('username');
         localStorage.removeItem('role');
-        window.location.href = 'index.html'; // Перенаправляем на страницу входа
+        window.location.href = 'index.html'; // РџРµСЂРµРЅР°РїСЂР°РІР»СЏРµРј РЅР° СЃС‚СЂР°РЅРёС†Сѓ РІС…РѕРґР°
     });
 }
 
-// Добавление пользователя
+// Р”РѕР±Р°РІР»РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 document.getElementById('add-user-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -56,13 +56,13 @@ document.getElementById('add-user-form').addEventListener('submit', function(eve
 
     localStorage.setItem('users', JSON.stringify(users));
 
-    alert('Пользователь добавлен!');
+    alert('РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ РґРѕР±Р°РІР»РµРЅ!');
     document.getElementById('new-username').value = '';
     document.getElementById('new-password').value = '';
     document.getElementById('role').value = 'admin';
 });
 
-// Отображение списка пользователей
+// РћС‚РѕР±СЂР°Р¶РµРЅРёРµ СЃРїРёСЃРєР° РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№
 function loadUsers() {
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const userList = document.getElementById('user-list');
@@ -70,14 +70,14 @@ function loadUsers() {
 
     users.forEach(user => {
         const li = document.createElement('li');
-        li.textContent = `Логин: ${user.username}, Роль: ${user.role}`;
+        li.textContent = `Р›РѕРіРёРЅ: ${user.username}, Р РѕР»СЊ: ${user.role}`;
         userList.appendChild(li);
     });
 }
 
 loadUsers();
 
-// Выставление оценок
+// Р’С‹СЃС‚Р°РІР»РµРЅРёРµ РѕС†РµРЅРѕРє
 document.getElementById('grade-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -89,7 +89,7 @@ document.getElementById('grade-form').addEventListener('submit', function(event)
 
     localStorage.setItem('grades', JSON.stringify(grades));
 
-    alert('Оценка выставлена!');
+    alert('РћС†РµРЅРєР° РІС‹СЃС‚Р°РІР»РµРЅР°!');
     document.getElementById('student-name').value = '';
     document.getElementById('grade').value = '';
 });

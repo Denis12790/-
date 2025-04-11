@@ -2,22 +2,43 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вход в электронный журнал</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Луномосик Pro</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: white;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #1a1a1a;
+            z-index: 1000;
+            box-shadow: 0 0 10px #000;
+        }
+
+        .content {
+            margin-top: 100px;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h2>Вход в электронный журнал</h2>
-    <form id="login-form">
-        <label for="username">Логин:</label>
-        <input type="text" id="username" required>
-        <br>
-        <label for="password">Пароль:</label>
-        <input type="password" id="password" required>
-        <br>
-        <button type="submit">Войти</button>
-    </form>
 
-    <script src="functions.js"></script>
+    <div class="header">Луномосик Pro</div>
+
+    <div class="content">
+        <h1>Добро пожаловать на сайт канала!</h1>
+        <p>Здесь будут новости, видео, и всякая крутая инфа.</p>
+        <!-- Здесь можно вставить видео, ссылки на соцсети, и т.д. -->
+    </div>
+
 </body>
 </html>

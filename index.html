@@ -4,7 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Луномосик Pro</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Основной стиль для страницы */
+        body {
+            margin: 0;
+            height: 100vh; /* Высота экрана */
+            background-color: black; /* Черный фон */
+            font-family: Arial, sans-serif; /* Шрифт для страницы */
+        }
+
+        /* Стиль для текста в углу */
+        .corner-text {
+            position: fixed;
+            top: 20px; /* Отступ сверху */
+            left: 20px; /* Отступ слева */
+            font-size: 100px; /* Размер шрифта */
+            font-weight: bold; /* Жирный шрифт */
+            color: white; /* Белый цвет текста */
+            z-index: 1000; /* Слой для текста, чтобы он был сверху */
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); /* Легкая тень для текста */
+            letter-spacing: 5px; /* Межбуквенный интервал */
+            text-transform: uppercase; /* Все буквы в верхнем регистре */
+        }
+    </style>
 </head>
 <body>
     <div class="corner-text">Луномосик Pro</div>

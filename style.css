@@ -1,44 +1,21 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Луномосик Pro</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0d0d0d;
-      color: white;
-    }
+/* Основной стиль для страницы */
+body {
+    margin: 0;
+    height: 100vh; /* Высота экрана */
+    background-color: black; /* Черный фон */
+    color: white; /* Белый текст по умолчанию */
+    font-family: Arial, sans-serif; /* Шрифт */
+}
 
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      padding: 20px;
-      font-size: 28px;
-      font-weight: bold;
-      color: #fff;
-      background-color: #1a1a1a;
-      z-index: 1000;
-      box-shadow: 0 0 10px #000;
-    }
-
-    .content {
-      margin-top: 100px;
-      padding: 20px;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="header">Луномосик Pro</div>
-
-  <div class="content">
-    <h1>Добро пожаловать на сайт канала!</h1>
-    <p>Здесь будут новости, видео и другая интересная информация.</p>
-  </div>
-
-</body>
-</html>
+/* Стиль для текста в углу */
+.corner-text {
+    position: fixed;
+    top: 20px; /* Отступ сверху */
+    left: 20px; /* Отступ слева */
+    font-size: 72px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    color: white; /* Белый цвет текста */
+    z-index: 1000; /* Обеспечивает, что текст будет на верхнем слое */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Тень для текста, чтобы он выделялся */
+    letter-spacing: 2px; /* Межбуквенный интервал для улучшения читаемости */
+}

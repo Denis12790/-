@@ -62,3 +62,143 @@
     <h1>ДОБРО ПОЖАЛОВАТЬ НА САЙТІ</h1>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обсуждения пользователей</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .message-board {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .message p {
+            margin: 0;
+        }
+        .form-group {
+            margin-top: 20px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            resize: none;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        .message p {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="message-board">
+        <h2>Обсуждения пользователей</h2>
+
+        <!-- Сообщения пользователей -->
+        <div id="messages-container">
+            <!-- Здесь будут отображаться сообщения -->
+        </div>
+
+        <!-- Форма для отправки нового сообщения -->
+        <div class="form-group">
+            <textarea id="message-input" rows="4" placeholder="Введите ваше сообщение..." maxlength="500"></textarea>
+            <button onclick="postMessage()">Отправить сообщение</button>
+            <p id="error-message" class="error"></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Массив для хранения сообщений
+    let messages = [];
+
+    // Функция для отображения сообщений
+    function displayMessages() {
+        const container = document.getElementById('messages-container');
+        container.innerHTML = ''; // Очистка контейнера
+
+        messages.forEach(message => {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+            messageElement.innerHTML = `<p>${message}</p>`;
+            container.appendChild(messageElement);
+        });
+    }
+
+    // Функция для отправки сообщения
+    function postMessage() {
+        const messageInput = document.getElementById('message-input');
+        const errorMessage = document.getElementById('error-message');
+
+        // Проверка на пустое сообщение
+        if (messageInput.value.trim() === '') {
+            errorMessage.textContent = 'Сообщение не может быть пустым!';
+            return;
+        }
+
+        // Проверка на эмодзи
+        const emojiRegex = /[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{2300}-\u{23FF}]/gu;
+        if (emojiRegex.test(messageInput.value)) {
+            errorMessage.textContent = 'Использование эмодзи не разрешено!';
+            return;
+        }
+
+        // Добавление сообщения в массив
+        messages.push(messageInput.value);
+
+        // Очистка поля ввода и скрытие ошибки
+        messageInput.value = '';
+        errorMessage.textContent = '';
+
+        // Обновление отображения сообщений
+        displayMessages();
+    }
+
+    // Инициализация
+    displayMessages();
+</script>
+
+</body>
+</html>

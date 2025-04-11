@@ -2,9 +2,11 @@
 body {
     margin: 0;
     height: 100vh; /* Высота экрана */
-    background-color: #000000; /* Черный фон */
-    color: white; /* Белый текст по умолчанию */
-    font-family: 'Anton', sans-serif; /* Подключение шрифта Anton */
+    background-color: black; /* Черный фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif; /* Шрифт для страницы */
 }
 
 /* Стиль для текста в углу */
@@ -15,8 +17,8 @@ body {
     font-size: 100px; /* Размер шрифта */
     font-weight: bold; /* Жирный шрифт */
     color: white; /* Белый цвет текста */
-    z-index: 1000; /* Слой для текста, чтобы он был поверх всего */
-    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7); /* Тень для текста, чтобы он выделялся */
-    letter-spacing: 5px; /* Увеличение расстояния между буквами */
+    z-index: 1000; /* Слой для текста, чтобы он был сверху */
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); /* Легкая тень для текста */
+    letter-spacing: 5px; /* Межбуквенный интервал */
     text-transform: uppercase; /* Все буквы в верхнем регистре */
 }

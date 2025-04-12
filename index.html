@@ -4,42 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube-стиль</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <div class="logo">YouTube</div>
-        <input type="text" class="search-bar" placeholder="Поиск на YouTube">
-        <div class="user-icon">🔑</div>
-    </header>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <nav>
-        <ul>
-            <li>Главная</li>
-            <li>Тренды</li>
-            <li>Подписки</li>
-            <li>Библиотека</li>
-        </ul>
-    </nav>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
 
-    <main>
-        <section class="videos">
-            <div class="video">
-                <img src="https://via.placeholder.com/320x180" alt="Видео 1">
-                <h3>Видео 1</h3>
-                <p>Описание видео 1</p>
-            </div>
-            <div class="video">
-                <img src="https://via.placeholder.com/320x180" alt="Видео 2">
-                <h3>Видео 2</h3>
-                <p>Описание видео 2</p>
-            </div>
-            <!-- Добавь больше видео по аналогии -->
-        </section>
-    </main>
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #FF0000;
+            padding: 10px 20px;
+            color: white;
+        }
 
-    <footer>
-        <p>&copy; 2025 YouTube-стиль. Все права защищены.</p>
-    </footer>
-</body>
-</html>
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header .search-bar {
+            width: 400px;
+            padding: 8px;
+            border-radius: 4px;
+            border: none;
+        }
+
+        header .user-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        nav {
+            background-color: #282828;
+            color: white;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+            cursor: pointer;
+        }
+
+        nav ul li:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .videos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+
+        .video {
+            width: 320px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0,

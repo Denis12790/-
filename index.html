@@ -66,3 +66,131 @@
     </div>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube-style Player</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .player {
+      position: relative;
+      width: 800px;
+      max-width: 100%;
+      background-color: #000;
+    }
+
+    video {
+      width: 100%;
+      display: block;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .play-pause {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .progress {
+      flex: 1;
+      height: 5px;
+      background: #444;
+      margin: 0 10px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .progress-filled {
+      height: 100%;
+      background: red;
+      width: 0%;
+    }
+
+    .time {
+      font-size: 14px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+<div class="player">
+  <video id="video" poster="preview.jpg">
+    <source src="video.mp4" type="video/mp4">
+    Ваш браузер не поддерживает видео.
+  </video>
+  <div class="controls">
+    <button id="playPause" class="play-pause">▶</button>
+    <div class="progress" id="progress">
+      <div class="progress-filled" id="progressFilled"></div>
+    </div>
+    <div class="time" id="time">0:00 / 0:00</div>
+  </div>
+</div>
+
+<script>
+  const video = document.getElementById('video');
+  const playPauseBtn = document.getElementById('playPause');
+  const progress = document.getElementById('progress');
+  const progressFilled = document.getElementById('progressFilled');
+  const timeDisplay = document.getElementById('time');
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60).toString().padStart(2, '0');
+    return `${minutes}:${seconds}`;
+  }
+
+  playPauseBtn.addEventListener('click', () => {
+    if (video.paused) {
+      video.play();
+      playPauseBtn.textContent = '⏸';
+    } else {
+      video.pause();
+      playPauseBtn.textContent = '▶';
+    }
+  });
+
+  video.addEventListener('timeupdate', () => {
+    const percent = (video.currentTime / video.duration) * 100;
+    progressFilled.style.width = `${percent}%`;
+    timeDisplay.textContent = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
+  });
+
+  progress.addEventListener('click', (e) => {
+    const progressWidth = progress.clientWidth;
+    const clickX = e.offsetX;
+    const newTime = (clickX / progressWidth) * video.duration;
+    video.currentTime = newTime;
+  });
+
+  video.addEventListener('ended', () => {
+    playPauseBtn.textContent = '▶';
+  });
+</script>
+
+</body>
+</html>

@@ -1,1 +1,50 @@
+body {
+  background: #000;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
+.player-container {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  background: #000;
+}
+
+.video {
+  width: 100%;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.controls input[type="range"] {
+  flex: 1;
+}
+
+.settings-menu {
+  position: absolute;
+  bottom: 60px;
+  right: 10px;
+  background: #111;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.hidden {
+  display: none;
+}

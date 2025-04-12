@@ -32,3 +32,37 @@
     <div class="corner-text">Луномосик Pro</div>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Центрированное видео</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;  /* по горизонтали */
+            align-items: flex-start; /* по вертикали от начала */
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .video-wrapper {
+            margin-top: 100px; /* отступ сверху */
+            max-width: 100%;
+            width: 560px;
+            height: 315px;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/3pvX3J4a26E?si=_IqzTU2KSjyatej0" allowfullscreen></iframe>
+    </div>
+</body>
+</html>
